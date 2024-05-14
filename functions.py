@@ -85,6 +85,7 @@ def count_words_base_on_number_of_letters(text):
                 if len(word) == length:
                     word_counts[length] += 1
         
+
         return word_counts
 
     lengths_to_count = list(range(1, longest_word + 1)) 
@@ -93,10 +94,12 @@ def count_words_base_on_number_of_letters(text):
     return(counts)
 
 # function for creating string containing number of "*" according the inserted number.   
-def drawer(num, words):
+def drawer(num, most_often_count_of_letter):
     stars = '*' * num
-    space_padding = ' ' * ((lenght_of_word(words)) - len(stars))
+    space_padding = ' ' * ((most_often_count_of_letter - len(stars)) +2)
     return f"{stars}{space_padding}|{num}"
+
+
 
 
 

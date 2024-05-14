@@ -41,17 +41,18 @@ else:
 
         print("-------------------------------------------")
 
-        word_list =(count_words_base_on_number_of_letters(separated_text))    
+        word_list =(count_words_base_on_number_of_letters(separated_text)) 
+        max(word_list.values())   
 
-        print("     LEN|  OCCURENCES    |NR.")
+        print(f"LEN| OCCURENCES{int(max((word_list.values()))-9) * ' '}|NR.")
         print("-------------------------------------------")
 
 
         for i in range(1, (lenght_of_word(separated_text) + 1)):
             if i < 10:
-                print(f"       {i}|{drawer(word_list[i], separated_text)}") 
+                print(f"  {i}|{drawer(word_list[i], max(word_list.values()))}") 
             else:
-                print(f"      {i}|{drawer(word_list[i], separated_text)}") 
+                print(f" {i}|{drawer(word_list[i], max(word_list.values()))}") 
 
         
 
