@@ -8,47 +8,36 @@ def check_authorization(username, password, auth_dict):
     else:
         return False
 
-# number of word begining with title case     
+# Number of words begining with title case     
 def titlecase(words):
     """return list of titlecase words"""
-    title_words = []            
-    for word in words:
-        if word.istitle():
-            title_words.append(word)
+    title_words = [word for word in words if word.istitle() ]
     print(f"There are {len(title_words)} titlecase words.")
     return title_words
 
-# number of word written only uppercase
+# Number of words written only uppercase
 def uppercase(words):
     """return list of uppercase words"""
-    uppercase_words = []
-    for word in words:
-        if word.isupper():
-            uppercase_words.append(word)
+    uppercase_words = [word for word in words if word.isupper()]
     print(f"There are {len(uppercase_words)} uppercase words.")        
     return uppercase_words
 
-# number of word begining with lowercase
+# Number of words begining with lowercase
 def lower(words):
-    """return list of lowercase words"""
-    lowercase_words = []
-    for word in words:
-        if word.islower():
-            lowercase_words.append(word)
+    # """return list of lowercase words"""
+    lowercase_words = [word for word in words if word.islower()]
     print(f"There are {len(lowercase_words)} lowercase words.")
     return lowercase_words
 
-# number of numbers in the control text  
+# Number of numbers in the control text  
 def number(words):
     """return list of all numbers"""
-    number_words = []
-    for word in words:
-        if word.isnumeric():
-            number_words.append(word)
+    number_words = [word for word in words if word.isnumeric()]
     return number_words
 
 # Sum of all numbers
 def sum_number(numbers):
+    """count the sum of all numbers"""
     total_number = 0
     for num in number(numbers):
         num = int(num)
@@ -56,7 +45,7 @@ def sum_number(numbers):
     print(f"The sum of all the numbers {total_number}.")
     return total_number
 
-# find the longest word in the list of words 
+# Function to find the longest word in the list of words 
 def lenght_of_word(words):
         """find the longest word in the list of words"""
         longest_word = 0
@@ -66,19 +55,16 @@ def lenght_of_word(words):
         return longest_word
 
 def count_words_base_on_number_of_letters(text):
-    # function to find the longest word
+    """count amount of words according to number of charts in the word"""
+
+    # Function to find the longest word
     lenght_of_word(text)
     longest_word = (lenght_of_word(text))  
-    
-    # function to count amount of words according to number of charts in the word.
 
+    # Function to count occurrence of words according to amount of letters
     def word_counter(word_list, length_list):
         """count occurrence of words according to amount of letters"""
-        # word_counts = {length: 0 for length in lengths}     ****shorter record****
-        word_counts = {}
-        for length in length_list:
-            word_counts[length] = 0
-
+        word_counts = {length: 0 for length in length_list}     
         
         for word in word_list:
             for length in length_list:

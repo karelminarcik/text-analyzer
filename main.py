@@ -1,9 +1,21 @@
+"""
+
+projekt_1.py: první projekt do Engeto Online Python Akademie
+
+author: Karel Minarčík
+
+email: k.minarcik@seznam.cz
+
+discord: Karel Minarčík | karlos9957
+
+"""
+
 from text import TEXTS
 from authorization import user_data
 from art import logo
 from functions import *
 
-username = input("username: ")
+username = input("username: ").lower()
 password = input("password: ")
 
 if not check_authorization(username, password, user_data):
