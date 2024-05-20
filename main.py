@@ -15,6 +15,8 @@ from authorization import user_data
 from art import logo
 from functions import *
 
+number_of_texts = len(TEXTS)
+
 username = input("username: ").lower()
 password = input("password: ")
 
@@ -25,13 +27,13 @@ else:
     print(logo)
     print("-------------------------------------------")
     print(f"Welcome to the app, {username}")
-    print("We have 3 texts to be analyzed.")
+    print(f"We have {number_of_texts} texts to be analyzed.")
     print("-------------------------------------------")
 
     # Chose a text to be analysis
-    choosen_text = (input("Enter a number btw. 1 and 3 to select: "))
+    choosen_text = (input(f"Enter a number btw. 1 and {number_of_texts} to select: "))
     print("-------------------------------------------")
-    if choosen_text not in ["1", "2", "3"]:
+    if int(choosen_text) not in range(1, number_of_texts + 1):
         print("You do not insert any of provided options, terminating the program..")
     else:
         text = TEXTS[int(choosen_text) - 1]

@@ -18,8 +18,8 @@ def titlecase(words):
 # Number of words written only uppercase
 def uppercase(words):
     """return list of uppercase words"""
-    uppercase_words = [word for word in words if word.isupper()]
-    print(f"There are {len(uppercase_words)} uppercase words.")        
+    uppercase_words = [word for word in words if word.isupper() and contain_digit(word)]
+    print(f"There are {len(uppercase_words)} uppercase words.")       
     return uppercase_words
 
 # Number of words begining with lowercase
@@ -84,6 +84,16 @@ def drawer(num, most_often_count_of_letter):
     stars = '*' * num
     space_padding = ' ' * ((most_often_count_of_letter - len(stars)) +2)
     return f"{stars}{space_padding}|{num}"
+
+
+# Function to control if digit is contained in the string
+def contain_digit(word):
+    """control if digit is contained in the inserted string """
+    for l in word:
+        if l.isdigit():
+            return False
+        else:
+            return True
 
 
 
